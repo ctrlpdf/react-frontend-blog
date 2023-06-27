@@ -1,5 +1,11 @@
+import Button from '../components/common/Button';
+
 function PostListPage() {
-  return <div>PostListPage</div>;
+  return (
+    <div>
+      <Button>PostListPage</Button>
+    </div>
+  );
 }
 
 export default PostListPage;
