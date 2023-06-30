@@ -1,10 +1,10 @@
 import AuthTemplate from '../components/auth/AuthTemplate';
-import AuthForm from '../components/auth/AuthForm';
+import SignUpForm from '../components/auth/SignUpForm';
 
 function SignUpPage() {
   return (
     <AuthTemplate>
-      <AuthForm type="signup" />
+      <SignUpForm />
     </AuthTemplate>
   );
 }

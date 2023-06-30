@@ -1,10 +1,10 @@
 import AuthTemplate from '../components/auth/AuthTemplate';
-import AuthForm from '../components/auth/AuthForm';
+import LoginForm from '../components/auth/LoginForm';
 
 function LoginPage() {
   return (
     <AuthTemplate>
-      <AuthForm type="login" />
+      <LoginForm />
     </AuthTemplate>
   );
 }

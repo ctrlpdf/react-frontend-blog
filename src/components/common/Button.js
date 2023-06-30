@@ -16,27 +16,23 @@ const StyledButton = styled.button`
     background: ${palette.gray[6]};
   }
 
-  ${
-    props => 
-    props.fullWidth &&
+  ${(props) =>
+    props.fullwidth &&
     css`
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       width: 100%;
       font-size: 1rem;
-    `
-  }
-  
-  ${
-    props =>
+    `}
+
+  ${(props) =>
     props.cyan &&
     css`
       background: ${palette.cyan[5]};
       &:hover {
         background: ${palette.cyan[4]};
       }
-    `
-  }
+    `}
 `;
 
 const Button = (props) => <StyledButton {...props} />;
