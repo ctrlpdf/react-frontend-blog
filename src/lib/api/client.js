@@ -7,8 +7,7 @@ client.defaults.baseURL = '';
 // header
 client.defaults.headers.common['Authorization'] = 'Bearer something...';
 
-// intercepter
-axios.intercepter.response.use(
+client.interceptors.response.use(
   (response) => {
     // success
     return response;
@@ -18,3 +17,5 @@ axios.intercepter.response.use(
     return Promise.reject(error);
   },
 );
+
+export default client;
