@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeField, initializeForm, signup } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
@@ -6,6 +6,7 @@ import { check } from '../../modules/user';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.signup,
@@ -28,8 +29,14 @@ const SignUpForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { username, password, passwordConfirm } = form;
+    // If any of the field are empty
+    if ([username, password, passwordConfirm].includes('')) {
+      setError('Fill all the fields.');
+      return;
+    }
+    // If password and passwordConfirm do not match
     if (password !== passwordConfirm) {
-      // Have to be the same!
+      setError('Passwords did not match.');
       return;
     }
     dispatch(signup({ username, password }));
@@ -43,7 +50,13 @@ const SignUpForm = () => {
   // What to do with signup result
   useEffect(() => {
     if (authError) {
-      console.log('signup failure', authError);
+      // If there is already id in db
+      if (authError.response.status === 409) {
+        setError('There is already same ID');
+        return;
+      }
+      // etc.
+      setError('Sign Up Failure');
       return;
     }
     if (auth) {
@@ -67,6 +80,7 @@ const SignUpForm = () => {
       form={form}
       onChange={onChange}
       onSubmit={onSubmit}
+      error={error}
     />
   );
 };

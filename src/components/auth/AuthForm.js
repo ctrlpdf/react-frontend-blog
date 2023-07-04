@@ -39,6 +39,13 @@ const Footer = styled.div`
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+`;
+
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 1rem;
 `;
@@ -48,7 +55,7 @@ const textMap = {
   signup: 'Sign up',
 };
 
-const AuthForm = ({ type = 'login', form, onChange, onSubmit }) => {
+const AuthForm = ({ type = 'login', form, onChange, onSubmit, error }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
@@ -76,6 +83,7 @@ const AuthForm = ({ type = 'login', form, onChange, onSubmit }) => {
             value={form.passwordConfirm}
           />
         )}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan="true" fullwidth="true">
           {text}
         </ButtonWithMarginTop>
