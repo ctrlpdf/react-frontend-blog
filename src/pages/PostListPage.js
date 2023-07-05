@@ -1,10 +1,11 @@
-import Button from '../components/common/Button';
+import HeaderContainer from '../components/common/HeaderContainer';
 
 function PostListPage() {
   return (
-    <div>
-      <Button>PostListPage</Button>
-    </div>
+    <>
+      <HeaderContainer />
+      <div>Hello123</div>
+    </>
   );
 }
 
