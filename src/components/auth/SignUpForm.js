@@ -71,6 +71,11 @@ const SignUpForm = () => {
     if (user) {
       alert('Your signup has been completed.');
       navigate('/');
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
+      }
     }
   }, [navigate, user]);
 
