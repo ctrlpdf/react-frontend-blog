@@ -1,10 +1,10 @@
-import HeaderContainer from '../components/common/HeaderContainer';
+import HeaderContainer from '../containers/common/HeaderContainer';
 
 function PostListPage() {
   return (
     <>
       <HeaderContainer />
-      <div>Hello123</div>
+      <div>PostListPage</div>
     </>
   );
 }
