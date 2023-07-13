@@ -5,7 +5,7 @@ import SignUpPage from './pages/SignUpPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<PostListPage />} />
@@ -18,6 +18,5 @@ function App() {
       </Route>
     </Routes>
   );
-}
-
+};
 export default App;

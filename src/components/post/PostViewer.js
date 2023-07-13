@@ -22,24 +22,37 @@ const PostContent = styled.div`
   border: 1px solid pink;
 `;
 
-const PostViewer = () => {
+const PostViewer = ({ post, error, loading }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <PostViewerBlock>There is no post.</PostViewerBlock>;
+    }
+    return <PostViewerBlock>Error</PostViewerBlock>;
+  }
+
+  if (loading || !post) {
+    return null;
+  }
+
+  const { title, body, user, publishedDate, tags } = { post };
+
   return (
     <PostViewerBlock>
       <PostHead>
-        <h1>Title</h1>
+        <h1>{title}</h1>
         <SubInfo>
           <span>
-            <b>test123</b>
+            <b>{user.username}</b>
           </span>
-          <span>{new Date().toLocaleDateString()}</span>
+          <span>{new Date(publishedDate).toLocaleDateString()}</span>
         </SubInfo>
         <Tags>
-          <div className="tag">#Tag1</div>
-          <div className="tag">#Tag2</div>
-          <div className="tag">#Tag3</div>
+          {tags.map((tag) => (
+            <div className="tag">#{tag}</div>
+          ))}
         </Tags>
       </PostHead>
-      <PostContent dangerouslySetInnerHTML={{ __html: '<p>HTML 123</p>' }} />
+      <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
   );
 };
