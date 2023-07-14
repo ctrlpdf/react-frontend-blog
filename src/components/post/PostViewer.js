@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-// import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
+import SubInfo from '../common/SubInfo';
+import Tags from '../common/Tags';
 
 const PostViewerBlock = styled(Responsive)`
   border: 1px solid red;
@@ -8,14 +9,6 @@ const PostViewerBlock = styled(Responsive)`
 
 const PostHead = styled.div`
   border: 1px solid blue;
-`;
-
-const SubInfo = styled.div`
-  border: 1px solid green;
-`;
-
-const Tags = styled.div`
-  border: 1px solid violet;
 `;
 
 const PostContent = styled.div`
@@ -40,17 +33,12 @@ const PostViewer = ({ post, error, loading }) => {
     <PostViewerBlock>
       <PostHead>
         <h1>{title}</h1>
-        <SubInfo>
-          <span>
-            <b>{user.username}</b>
-          </span>
-          <span>{new Date(publishedDate).toLocaleDateString()}</span>
-        </SubInfo>
-        <Tags>
-          {tags.map((tag) => (
-            <div className="tag">#{tag}</div>
-          ))}
-        </Tags>
+        <SubInfo
+          username={user.username}
+          publishedDate={publishedDate}
+          hasMarginTop={true}
+        />
+        <Tags tags={tags} />
       </PostHead>
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
