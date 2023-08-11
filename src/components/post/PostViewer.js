@@ -15,7 +15,7 @@ const PostContent = styled.div`
   border: 1px solid pink;
 `;
 
-const PostViewer = ({ post, error, loading }) => {
+const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (error) {
     if (error.response && error.response.status === 404) {
       return <PostViewerBlock>There is no post.</PostViewerBlock>;
@@ -40,6 +40,7 @@ const PostViewer = ({ post, error, loading }) => {
         />
         <Tags tags={tags} />
       </PostHead>
+      {actionButtons}
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
   );
