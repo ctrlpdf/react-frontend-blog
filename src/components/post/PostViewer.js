@@ -27,7 +27,7 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
     return null;
   }
 
-  const { title, body, user, publishedDate, tags } = { post };
+  const { title, body, user, publishedDate, tags } = post;
 
   return (
     <PostViewerBlock>
