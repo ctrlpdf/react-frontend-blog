@@ -4,10 +4,10 @@ const PostActionButtonsBlock = styled.div``;
 
 const ActionButton = styled.button``;
 
-const PostActionButtons = () => {
+const PostActionButtons = ({ onEdit }) => {
   return (
     <PostActionButtonsBlock>
-      <ActionButton>Edit</ActionButton>
+      <ActionButton onClick={onEdit}>Edit</ActionButton>
       <ActionButton>Remove</ActionButton>
     </PostActionButtonsBlock>
   );
