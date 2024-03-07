@@ -3,10 +3,16 @@ import qs from 'qs';
 import Button from '../common/Button';
 
 const PaginationBlock = styled.div`
-  width: 320px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 20px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const PageNumber = styled.div``;

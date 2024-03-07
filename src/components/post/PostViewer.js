@@ -6,7 +6,11 @@ import { Helmet } from 'react-helmet-async';
 
 const PostViewerBlock = styled(Responsive)`
   margin-top: 1rem;
-  border: 1px solid rgba(0, 0, 0, 1);
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+  background-color: #f7f9fc;
 `;
 
 const PostHead = styled.div`
@@ -14,12 +18,16 @@ const PostHead = styled.div`
     font-size: 3rem;
     line-height: 1.5;
     margin: 0;
+    color: #4a4a4a;
+    font-weight: 600;
   }
 `;
 
 const PostContent = styled.div`
   font-size: 1.3125rem;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
 `;
 
 const PostViewer = ({ post, error, loading, actionButtons }) => {

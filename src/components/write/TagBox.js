@@ -2,13 +2,36 @@ import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 
-const TagBoxBlock = styled(Responsive)``;
+const TagBoxBlock = styled(Responsive)`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-top: 10px;
+`;
 
-const TagForm = styled.form``;
+const TagForm = styled.form`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+`;
 
-const Tag = styled.div``;
+const Tag = styled.div`
+  display: inline-block;
+  color: #495057;
+  text-decoration: none;
+  margin-right: 3px;
+  font-size: 14px;
+  &:hover {
+    color: #adb5bd;
+  }
+`;
 
-const TagListBlock = styled.div``;
+const TagListBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const TagItem = React.memo(({ tag, onRemove }) => (
   <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>

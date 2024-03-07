@@ -6,8 +6,8 @@ const buttonStyle = css`
   border: none;
   border-radius: 4px;
   font-size: 1rem;
-  font-weight: bold;
-  padding: 0.25rem 1rem;
+  font-weight: 500; // Less bold for a cleaner look
+  padding: 0.5rem 1rem; // Increase padding for a more touch-friendly interface
   color: white;
   outline: none;
   cursor: pointer;
@@ -35,7 +35,7 @@ const buttonStyle = css`
       }
     `}
 
-  &:disabled {
+    &:disabled {
     background: ${palette.gray[3]};
     color: ${palette.gray[5]};
     cursor: not-allowed;

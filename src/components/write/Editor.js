@@ -4,20 +4,39 @@ import 'quill/dist/quill.bubble.css';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 
-const EditorBlock = styled(Responsive)``;
+const EditorBlock = styled(Responsive)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+`;
 
 const TitleInput = styled.input`
-  border: 1px solid black;
-  font-size: 3rem;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 2.5rem;
   outline: none;
   width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  &:focus {
+    border-bottom: 2px solid #007bff;
+  }
 `;
 
 const QuillWrapper = styled.div`
-  border: 1px solid black;
+  border: none;
+  width: 100%; // Add this line to set the width to maximum
   .ql-editor {
     min-height: 320px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
   }
   .ql-editor.ql-blank::before {
     left: 0px;
