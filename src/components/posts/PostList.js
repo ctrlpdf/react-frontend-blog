@@ -7,9 +7,17 @@ import Tags from '../common/Tags';
 
 const PostListBlock = styled(Responsive)``;
 
-const WritePostButtonWrapper = styled.div``;
+const WritePostButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`;
 
-const PostItemBlock = styled.div``;
+const PostItemBlock = styled.div`
+  border: 1px solid rgba(0, 0, 0, 1);
+  padding: 0.5rem;
+`;
 
 const PostItem = ({ post }) => {
   const { publishedDate, user, tags, title, body, _id } = post;

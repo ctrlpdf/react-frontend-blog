@@ -4,26 +4,23 @@ import Button from './Button';
 import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
-  background: black;
   position: fixed;
   width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0);
+  background-color: white;
 `;
 
 const Wrapper = styled(Responsive)`
-  background: green;
+  border: 1px solid rgba(0, 0, 0, 1);
   height: 4rem;
-  dispaly: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   .logo {
-    background: red;
     font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-weight: 1000;
+    letter-spacing: 10px;
   }
   .right {
-    background: blue;
     display: flex;
     align-items: center;
   }
@@ -44,7 +41,7 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            LOGO
+            BLOG
           </Link>
           {user ? (
             <div className="right">

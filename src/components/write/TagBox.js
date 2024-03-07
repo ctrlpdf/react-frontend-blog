@@ -1,22 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
-// import palette from '../../lib/styles/palette';
+import Responsive from '../common/Responsive';
 
-const TagBoxBlock = styled.div`
-  border: 1px solid red;
-`;
+const TagBoxBlock = styled(Responsive)``;
 
-const TagForm = styled.form`
-  border: 1px solid blue;
-`;
+const TagForm = styled.form``;
 
-const Tag = styled.div`
-  border: 1px solid green;
-`;
+const Tag = styled.div``;
 
-const TagListBlock = styled.div`
-  border: 3px solid violet;
-`;
+const TagListBlock = styled.div``;
 
 const TagItem = React.memo(({ tag, onRemove }) => (
   <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>

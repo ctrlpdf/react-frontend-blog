@@ -2,29 +2,22 @@ import { useRef, useEffect } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.bubble.css';
 import styled from 'styled-components';
-// import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 
-const EditorBlock = styled(Responsive)`
-  border: 1px solid red;
-  // padding-top: 5rem;
-  // padding-bottom: 5rem;
-`;
+const EditorBlock = styled(Responsive)``;
 
 const TitleInput = styled.input`
-  border: 1px solid blue;
+  border: 1px solid black;
   font-size: 3rem;
   outline: none;
   width: 100%;
 `;
 
 const QuillWrapper = styled.div`
-  border: 1px solid green;
+  border: 1px solid black;
   .ql-editor {
-    padding: 0;
     min-height: 320px;
     font-size: 1rem;
-    line-height: 2;
   }
   .ql-editor.ql-blank::before {
     left: 0px;

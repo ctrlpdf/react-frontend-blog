@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import Button from '../common/Button';
+import Responsive from '../common/Responsive';
 
-const WriteActionButtonsBlock = styled.div`
-  border: 1px solid red;
+const WriteActionButtonsBlock = styled(Responsive)`
+  padding: 1rem;
+  display: flex;
+  margin-right: 10px;
 `;
 
 const StyledButton = styled(Button)``;

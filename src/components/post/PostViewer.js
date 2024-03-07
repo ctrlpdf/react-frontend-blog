@@ -5,15 +5,21 @@ import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
 
 const PostViewerBlock = styled(Responsive)`
-  border: 1px solid red;
+  margin-top: 1rem;
+  border: 1px solid rgba(0, 0, 0, 1);
 `;
 
 const PostHead = styled.div`
-  border: 1px solid blue;
+  h1 {
+    font-size: 3rem;
+    line-height: 1.5;
+    margin: 0;
+  }
 `;
 
 const PostContent = styled.div`
-  border: 1px solid pink;
+  font-size: 1.3125rem;
+  color: rgba(0, 0, 0, 0.8);
 `;
 
 const PostViewer = ({ post, error, loading, actionButtons }) => {

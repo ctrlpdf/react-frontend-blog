@@ -2,7 +2,11 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import AskRemoveModal from './AskRemoveModal';
 
-const PostActionButtonsBlock = styled.div``;
+const PostActionButtonsBlock = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+`;
 
 const ActionButton = styled.button``;
 
